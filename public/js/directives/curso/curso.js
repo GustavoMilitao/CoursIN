@@ -1,10 +1,10 @@
-angular.module('minhasDiretivas')
+angular.module('coursinDiretivas')
 	.directive('curso', function() {
 
 		var ddo = {};
 
 		ddo.restrict = "AE";
-        ddo.transclude = true;
+        ddo.transclude = true; 
 
 
 		ddo.scope = {

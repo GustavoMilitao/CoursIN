@@ -1,1 +1,1 @@
-angular.module('minhasDiretivas', []);
+angular.module('coursinDiretivas', []);
