@@ -5,4 +5,14 @@ angular.module('coursein')
 
 				$scope.curso = {};
 
+				$scope.getStartTime = function () {
+					return new Date($scope.curso.start);
+				}
+
+				$scope.getEndTime = function(){
+					return new Date($scope.curso.finish);
+				}
+
+				$scope.getDifTime = function(){}
+
 			}]);

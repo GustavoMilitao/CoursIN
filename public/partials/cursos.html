@@ -1,13 +1,21 @@
 <nav>
-	<div class="nav-wrapper">
+	<div class="blue nav-wrapper navbar-fixed">
+		<label class="brand-logo left">Cursos</label>
 		<form>
 			<div class="input-field">
 				<input id="search" type="search" required>
-				<label class="label-icon" for="search">
-					<i class="material-icons">search</i>
-				</label>
 				<i class="material-icons">close</i>
 			</div>
 		</form>
+	</div>
+	<div class="row">
+		<div class="col s12 m12 l12 xl12">
+			<div ng-repeat="curso in cursos track by $index" class="col s12 m6 l4 xl4">
+				<a href="/curso/{{$index}}">
+					<curso categoria="{{curso.category}}" titulo="{{curso.title}}" , cidade="{{curso.address.city}}" , dtInicio="{{curso.start}}">
+					</curso>
+				</a>
+			</div>
+		</div>
 	</div>
 </nav>

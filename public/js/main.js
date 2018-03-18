@@ -1,4 +1,4 @@
-angular.module('coursin', ['ngRoute','coursinServicos'])
+angular.module('coursin', ['ngRoute','coursinServicos', 'coursinDiretivas'])
 	.config(function($routeProvider, $locationProvider) {
 
 		$locationProvider.html5Mode(true);
