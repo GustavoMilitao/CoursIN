@@ -1,20 +1,20 @@
 angular.module('coursinDiretivas')
-	.directive('curso', function() {
+    .directive('curso', function () {
 
-		var ddo = {};
+        var ddo = {};
 
-		ddo.restrict = "AE";
-        ddo.transclude = true; 
+        ddo.restrict = "AE";
+        ddo.transclude = true;
 
 
-		ddo.scope = {
+        ddo.scope = {
             categoria: '@',
             titulo: '@',
             cidade: '@',
-            dtInicio: '@'
+            dtInicio: '@',
         };
 
         ddo.templateUrl = 'js/directives/curso/curso.html';
 
-		return ddo;
-	});
+        return ddo;
+    });

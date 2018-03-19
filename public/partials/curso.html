@@ -1,15 +1,64 @@
-<div class="container">
+<div ng-show="!ready" class="container">
     <div class="row">
-        <div class="s12 m12 l12 xl12">
-            {{description}}
-            <h6 class="grey-text text-lighten-1">
-                <i class="grey-text text-darken-1 material-icons right">event</i>
-                {{dtInicio}}
+        <div id="loading" style="z-index:500">
+            <ul class="bokeh">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<nav class="nav-extended">
+    <div class="nav-content blue center">
+        <div class="row">
+            <div class="col s1 m1 l1 xl1">
+                <a class="brand-logo left" href="/">
+                    <i class="material-icons">arrow_back</i>
+                </a>
+            </div>
+        </div>
+        <label class="nav-title white-text ">{{curso.title}}</label>
+    </div>
+</nav>
+<br>
+<div class="container container-curso curso">
+    <div class="row white">
+        <br>
+        <div class="col s12 m12 l12 xl12">
+            <div class="col s12 m12 l12 xl12 grey-text text-darken-1">
+                {{curso.description}}
+            </div>
+            <h6 class="col s12 m12 l12 xl12 grey-text text-lighten-1 valign-wrapper">
+                <i class="grey-text text-darken-1 material-icons left">event</i>
+                {{curso.start | date : 'longDate'}}
             </h6>
-            <h6 class="grey-text text-lighten-1">
-                <i class="grey-text text-darken-1 material-icons right">access_time</i>
-                De {{getStartTime()}} as {{getEndTime()}} - 
+            <h6 class="col s12 m12 l12 xl12 grey-text text-lighten-1 valign-wrapper">
+                <i class="grey-text text-darken-1 material-icons left">access_time</i>
+                De {{startTime}} as {{endTime}} - {{diffTime}}h
             </h6>
+            <h6 class="col s12 m12 l12 xl12 grey-text text-lighten-1 valign-wrapper">
+                <i class="grey-text text-darken-1 material-icons left">location_on</i>
+                <a href="http://maps.google.com/?q={{curso.address.street}}, {{curso.address.number}} - {{curso.address.city}}" target="_blank">
+                    {{curso.address.street}}, {{curso.address.number}} - {{curso.address.city}}
+                </a>
+            </h6>
+            <h6 class="col s12 m12 l12 xl12 grey-text text-lighten-1 valign-wrapper">
+                <i class="grey-text text-darken-1 material-icons left">attach_money</i>
+                {{curso.price | currency : "R$" : 2}}
+            </h6>
+            <h6 class="col s12 m12 l12 xl12 grey-text text-lighten-1 valign-wrapper">
+                <i class="grey-text text-darken-1 material-icons left">label</i>
+                {{curso.category}}
+            </h6>
+            <div class="container valign-wrapper">
+                <img class="img-responsive circle left" src="{{curso.consultant.avatar}}"> {{curso.consultant.name}}
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l12 xl12 center-align">
+                    <a class="btn waves-effect waves-light black-text orange darken-2" href="#">Inscrição</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -9,21 +9,24 @@
     <title>CoursIN</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/libs/materialize.css">
+    <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/coursin.css">
 </head>
 
-<body>
+<body ng-cloak>
     <ng-view></ng-view>
 </body>
 <script src="js/libs/jquery-3.3.1.js"></script>
 <script src="js/libs/materialize.js"></script>
 <script src="js/libs/angular.js"></script>
 <script src="js/libs/angular-route.js"></script>
+<script src="js/libs/angular-locale_pt-br.js"></script>
 <script src="js/services/services.js"></script>
 <script src="js/services/cursos/cursos.js"></script>
 <script src="js/directives/directives.js"></script>
 <script src="js/directives/curso/curso.js"></script>
 <script src="js/main.js"></script>
+<script src="js/controllers/curso-controller.js"></script>
 <script src="js/controllers/cursos-controller.js"></script>
 
 </html>
