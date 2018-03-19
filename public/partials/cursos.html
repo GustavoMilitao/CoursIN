@@ -9,26 +9,28 @@
 		</div>
 	</div>
 </div>
-<nav>
-	<div class="blue nav-wrapper navbar-fixed">
-		<div class="row no-margin-bottom">
-			<div class="col s12 m12 l12 xl12">
-				<label class="brand-logo left">Cursos</label>
+<div ng-show="ready">
+	<nav>
+		<div class="blue nav-wrapper navbar-fixed">
+			<div class="row no-margin-bottom">
+				<div class="col s12 m12 l12 xl12">
+					<label class="brand-logo left">Cursos</label>
+				</div>
+			</div>
+			<div class="input-field">
+				<input id="search" placeholder="Pesquisar" ng-model="searchTitle" type="search" required>
+				<i class="material-icons logo-search">search</i>
+				<i class="material-icons">close</i>
 			</div>
 		</div>
-		<div class="input-field">
-			<input id="search" placeholder="Pesquisar" ng-model="searchTitle" type="search" required>
-			<i class="material-icons logo-search">search</i>
-			<i class="material-icons">close</i>
+	</nav>
+	<br>
+	<div class="row">
+		<div ng-repeat="curso in cursos | filter:searchTitle" class="col s12 m6 l4 xl4">
+			<a href="/curso/{{$index}}">
+				<curso categoria="{{curso.category}}" titulo="{{curso.title}}" cidade="{{curso.address.city}}" dt-inicio="{{curso.start}}">
+				</curso>
+			</a>
 		</div>
-	</div>
-</nav>
-<br>
-<div class="row">
-	<div ng-repeat="curso in cursos | filter:searchTitle" class="col s12 m6 l4 xl4">
-		<a href="/curso/{{$index}}">
-			<curso categoria="{{curso.category}}" titulo="{{curso.title}}" cidade="{{curso.address.city}}" dt-inicio="{{curso.start}}">
-			</curso>
-		</a>
 	</div>
 </div>
